@@ -1,0 +1,43 @@
+
+/*h1:hover {
+  color: blue;
+  transform: translate(0px, -0.5em) scale(1,0);
+  animation-name: flipOver;
+  animation-duration: 1s;
+}*/
+
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 80%;
+  white-space: pre;
+}
+
+#right_splash {
+  position: absolute;
+/*  top: 25%;
+  height: 50%;
+  left:50%;*/
+  width: 150px;
+  height: 150px;
+
+  background: url("../img/blank_img_1.jpg") center center no-repeat;
+  background-size: contain;
+
+  -webkit-transition: all .75s ease-in-out;
+  -moz-transition: all .75s ease-in-out;
+  transition: all .75s ease-in-out;
+}
+
+@keyframes hide {
+  from {transform: translate(0px, 0px) scale(1, 1);  }
+  to {transform: translate(0px, -0.5em) scale(1,0);}
+}
+
+@keyframes show {
+  from {transform: translate(0px, 0.5em) scale(1,0);  }
+  to {transform: translate(0px, 0px) scale(1, 1); }
+}
