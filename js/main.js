@@ -19,6 +19,8 @@ class Flipper {
 		this.imgLink = _imgLink;
 		console.log(this.imgLink);
 
+		this.timerReset = 0;
+
 	}
 
 	create(id) {
@@ -49,55 +51,43 @@ class Flipper {
 
 		//let newLink = this.imgLink;
 		let newLink = './img/' + this.imgLink + '_img_1.jpg';
+		let imgLink = this.imgLink;
+
+		let newTimer = this.timerReset;
+		let intervalId = null;
 		
 		first.addEventListener('mouseover', function() {
-			first.style.animationName='hide';
-			second.style.animationName='show';
-			first.style.animationDuration="1s";
-			second.style.animationDuration="1s";
-			first.style.transform= "translate(0px, 0.5em) scale(1,0)";
+			first.style.transform= "translate(0px, -0.5em) scale(1,0)";
 			second.style.transform= "translate(0px, 0px) scale(1, 1)";
-			//main_splash.src = "./img/" + newLink + "_img_1.jpg";
 
 			main_splash.style.backgroundImage = "url(" + newLink + ")";
 			console.log(newLink);
-			//main_splash.setAttribute("src", "./img/" + newLink + "_img_1.jpg");
 
-
-			// setTimeout(function(){
-			// 	second.style.animationName='hide';
-			// 	first.style.animationName='show';
-			// 	second.style.animationDuration="1s";
-			// 	first.style.animationDuration="1s";
-			// 	second.style.transform= "translate(0px, 0.5em) scale(1,0)";
-			// 	first.style.transform= "translate(0px, 0px) scale(1, 1)";
-			// 	main_splash.src = "";
-			// }, 5000);
 		});
 
 		second.addEventListener('mouseover', function() {
+			newTimer = 0;
+			if (intervalId)
+				clearTimeout(intervalId);
 			main_splash.style.backgroundImage = "url(" + newLink + ")";
 		});
 
 		second.addEventListener('mouseout', function() {
-			setTimeout(function(){
-				second.style.animationName='hide';
-				first.style.animationName='show';
-				second.style.animationDuration="1s";
-				first.style.animationDuration="1s";
-				second.style.transform= "translate(0px, 0.5em) scale(1,0)";
-				first.style.transform= "translate(0px, 0px) scale(1, 1)";
-			}, 5000);
+
+			intervalId = setInterval(function() {
+				newTimer++;
+				//console.log(imgLink + ":" +  newTimer);
+				if (newTimer == 5) {
+					console.log("times up!");
+					second.style.transform= "translate(0px, 0.5em) scale(1,0)";
+					first.style.transform= "translate(0px, 0px) scale(1, 1)";
+					clearTimeout(intervalId);
+				}
+			}, 1000);
+
+
 		});
 
-		// second.addEventListener('mouseover', function() {
-		// 	second.style.animationName='hide';
-		// 	first.style.animationName='show';
-		// 	second.style.animationDuration="1s";
-		// 	first.style.animationDuration="1s";
-		// 	second.style.transform= "translate(0px, 0.5em) scale(1,0)";
-		// 	first.style.transform= "translate(0px, 0px) scale(1, 1)";
-		// })
 	}
 }
 
@@ -120,6 +110,7 @@ class notFlipper {
 		document.body.appendChild(container);
 	}
 }
+
 
 let topCell = new notFlipper(" ");
 topCell.create("topCell");
