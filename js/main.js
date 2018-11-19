@@ -75,6 +75,10 @@ class Flipper {
 			// }, 5000);
 		});
 
+		second.addEventListener('mouseover', function() {
+			main_splash.style.backgroundImage = "url(" + newLink + ")";
+		});
+
 		second.addEventListener('mouseout', function() {
 			setTimeout(function(){
 				second.style.animationName='hide';
@@ -120,7 +124,7 @@ class notFlipper {
 let topCell = new notFlipper(" ");
 topCell.create("topCell");
 
-let j = new Flipper("      J", "      J", "hyperloop");
+let j = new notFlipper("      J");
 j.create("j");
 
 let formula = new Flipper("      U", "  FORMULA SAE","formula");
@@ -129,7 +133,7 @@ formula.create("formula");
 let bae = new Flipper("      S", "BAE SYSTEMS","bae");
 bae.create("bae");
 
-let t = new Flipper("      T", "      T","");
+let t = new notFlipper("      T");
 t.create("t");
 
 let rewire = new Flipper("      I", "   REWIRE LABS","rewire");
