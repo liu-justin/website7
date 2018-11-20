@@ -36,7 +36,7 @@ class Flipper {
 		var second = document.createElement("H1");
 		var secondText = document.createTextNode(this.secondWord);
 		second.innerHTML=this.secondWord;
-		second.style.transform = "translate(0px, 0.5em) scale(1,0)";
+		second.style.transform = "translate(0px, 0.4em) scale(1,0)";
 		second.style.position = "relative";
 
 		container.appendChild(first);
@@ -57,7 +57,7 @@ class Flipper {
 		let intervalId = null;
 		
 		first.addEventListener('mouseover', function() {
-			first.style.transform= "translate(0px, -0.5em) scale(1,0)";
+			first.style.transform= "translate(0px, -0.4em) scale(1,0)";
 			second.style.transform= "translate(0px, 0px) scale(1, 1)";
 
 			main_splash.style.backgroundImage = "url(" + newLink + ")";
@@ -65,22 +65,23 @@ class Flipper {
 
 		});
 
-		second.addEventListener('mouseover', function() {
+		container.addEventListener('mouseover', function() {
 			newTimer = 0;
 			if (intervalId)
 				clearTimeout(intervalId);
 			main_splash.style.backgroundImage = "url(" + newLink + ")";
 		});
 
-		second.addEventListener('mouseout', function() {
+		container.addEventListener('mouseout', function() {
 
 			intervalId = setInterval(function() {
 				newTimer++;
 				//console.log(imgLink + ":" +  newTimer);
 				if (newTimer == 5) {
 					console.log("times up!");
-					second.style.transform= "translate(0px, 0.5em) scale(1,0)";
+					second.style.transform= "translate(0px, 0.4em) scale(1,0)";
 					first.style.transform= "translate(0px, 0px) scale(1, 1)";
+					first.style.color = "#f4f4f4";
 					clearTimeout(intervalId);
 				}
 			}, 1000);
@@ -118,29 +119,29 @@ topCell.create("topCell");
 let j = new notFlipper("      J");
 j.create("j");
 
-let formula = new Flipper("      U", "  FORMULA SAE","formula");
+let formula = new Flipper("      U         ", "  FORMULA SAE","formula");
 formula.create("formula");
 
-let bae = new Flipper("      S", "BAE SYSTEMS","bae");
+let bae = new Flipper("      S         ", "BAE SYSTEMS","bae");
 bae.create("bae");
 
 let t = new notFlipper("      T");
 t.create("t");
 
-let rewire = new Flipper("      I", "   REWIRE LABS","rewire");
+let rewire = new Flipper("      I         ", "   REWIRE LABS","rewire");
 rewire.create("rewire");
 
-let enron = new Flipper("      N", "  ENRON RAPTORS","enron");
+let enron = new Flipper("      N         ", "  ENRON RAPTORS","enron");
 enron.create("enron");
 
 let midCell = new notFlipper(" ");
 midCell.create("midCell");
 
-let word = new Flipper("      L", "WORD CLOCK","wordclock");
+let word = new Flipper("      L         ", "WORD CLOCK","wordclock");
 word.create("word");
 
-let dell = new Flipper("      I", "   SENIOR DESIGN","dell");
+let dell = new Flipper("      I         ", "   SENIOR DESIGN","dell");
 dell.create("dell");
 
-let guadaloop = new Flipper("      U", "     GUADALOOP", "hyperloop");
+let guadaloop = new Flipper("      U         ", "     GUADALOOP", "hyperloop");
 guadaloop.create("guadaloop");
