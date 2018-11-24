@@ -163,8 +163,6 @@ class MidFlipper {
 		let intervalId = null;
 
 		container.addEventListener('mouseover', function() {
-			left.style.color = "#000000";
-			right.style.color = "#000000";
 
 			left.style.transform= "translate(0px, 0px) scale(1, 1)";
 			right.style.transform= "translate(0px, 0px) scale(1, 1)";
