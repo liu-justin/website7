@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- START OF BOOTSTRAP -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- END OF BOOTSTRAP -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+  <title>Word Clock</title>
+</head>
+
+<body>
+
+  <div id="wcimg-1" class="bgimg">
+    <div class="caption">
+      <h3 class="display-4">WORD CLOCK</h3>
+    </div>
+  </div>
+
+  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+    <h3 style="text-align:center;">BACKGROUND</h3>
+    <p>On my own time, I have built a special clock that displays the time in word format. This was my first foray into electrical engineering, and I had an absolute blast with it. A microprocessor controls an array of LEDs that light up a predetermined pattern under a printed template. </p>
+  </div>
+
+  <div id="wcimg-2" class="bgimg">
+    <div class="caption">
+      <h3 class="display-4">V1</h3>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+      <p>This being my first time dealing with circuits of any kind, my first hurdle was designing the board. After some digging around I decided that the best way to control all 121 LEDs was by using an Arduino with daisy-chained shift registers. I then started to design my circuit card to hold all the shift registers and all of the output ports, and afterwards used a PCB milling machine to create my very first PCB. I designed and printed the case that holds all the wires, connected and soldered everything together, and programmed a rudimentary parsing program that runs the clock. </p>
+    </div>
+  </div>
+
+  <div id="wcimg-3" class="bgimg">
+    <div class="caption">
+      <h3 class="display-4">BOARD DESIGN</h3>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+      <p>A couple of months later, I had the opportunity to improve upon my design. This previous clock was indeed my first model, and was ripe with issues. The wiring from PCB to LEDs took up a significant amount of space, and were hopelessly tangled. I solved this issue by designing a smaller modular board that had both the shift registers and the LEDs soldered on. These smaller boards would then link to each other with much shorter wire length.  </p>
+    </div>
+  </div>
+
+  <div id="wcimg-4" class="bgimg">
+    <div class="caption">
+      <h3 class="display-4">IC & CODE</h3>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+      <p>The old clock would develop quite a time delay, and I soon realized that internal microprocessor clocks are inaccurate. I would have to implement an auxiliary unit with a crystal specifically designed to keep time. Also, to foolproof the eventual decay of this auxiliary unit, I decided to install some buttons so that the user can adjust the time of their own accord. Finally, I implemented a new framework in the code that made it much easier to switch templates and letters. After a couple of weeks, I managed to complete this new clock. </p>
+    </div>
+  </div>
+
+  <div id="wcimg-5" class="bgimg"></div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
